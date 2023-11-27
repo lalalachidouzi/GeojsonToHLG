@@ -13,9 +13,8 @@ var coordinates = geometry["coordinates"] as JArray;
 var coordinate = coordinates[0] as JArray;
 var c = coordinate[0];
 
-
 // 文件路径
-string outputPath = Path.Combine(Path.GetDirectoryName(jsonpath), "output.txt");
+string outputPath = Path.Combine(Path.GetDirectoryName(jsonpath), "output.hlg");
 
 // 使用 StreamWriter 以追加方式打开文件
 using StreamWriter writer = new StreamWriter(outputPath, true);
@@ -31,3 +30,6 @@ foreach (var item in c)
     writer.WriteLine($"PointLat_{count.ToString()}={point[1].ToString()}");
     count++;
 }
+
+Console.WriteLine("OK");
+Console.ReadKey();
